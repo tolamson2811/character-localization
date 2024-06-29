@@ -20,7 +20,7 @@ The data was provided by Dr. Ta Viet Cuong - UET.
 ### Methodology
 
 1. **Model Training:**
-    * Utilized YOLOv5 on Google Colab with epochs = 300, batch size = 32.
+    * Utilized YOLOv5 on Google Colab with epochs = 300, batch size = 32. (https://colab.research.google.com/drive/1PPqba88Qr7HpxvJHggwIWh-QcQayvkEx?usp=sharing)
     * The model was saved as `best.pt` (3.7MB).
 
 2. **Character Localization:**
