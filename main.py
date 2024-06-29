@@ -101,18 +101,26 @@ if __name__ == "__main__":
             continue
 
         total += 1
-        img = cv2.imread(os.path.join(input_folder, filename))
-        targets = read_label(img, os.path.join(label_folder, filename[:-4] + ".txt"))  # Truyền img
+        img_path = os.path.join(input_folder, filename)
+        img = cv2.imread(img_path)
+        targets = read_label(img, os.path.join(label_folder, filename[:-4] + ".txt"))  
         print(img.shape)
 
         list_outputs = detector.detect(img)
         preds = get_predict(list_outputs)
 
+        # draw bounding box
+        for box in preds:
+            x1, y1, x2, y2 = box[:4].astype(int)
+            cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2) 
+
+        # save output image
+        output_filename = f"output_{filename}"
+        cv2.imwrite(os.path.join(input_folder, output_filename), img) 
+
         metric_fn = MetricBuilder.build_evaluation_metric("map_2d", async_mode=True, num_classes=1)
         metric_fn.add(preds, targets)
         score = metric_fn.value(iou_thresholds=np.arange(0.5, 0.75, 0.05))['mAP']
-        #for t in range(50, 76, 5):
-        #    scores += [map_score(list_outputs, targets, 0.01*t)]
 
         img_score += [score]
         temp_finish_time = time.time() - temp_start_time
@@ -121,4 +129,3 @@ if __name__ == "__main__":
     run_time = time.time() - start_time
     print("Map score: %.6f" % np.mean(img_score))
     print("Run time: ", run_time)
-

@@ -32,6 +32,7 @@ The data was provided by Dr. Ta Viet Cuong - UET.
 
 * **Accuracy (mAP):** Achieved approximately 0.98 on both the training and testing datasets.
 * **Runtime:** Averaged 8.93 seconds/image for the test set (10 images) and 9.2 seconds/image for the training set (70 images).
+* **Output Images:** The result images (with detected character bounding boxes) will be stored in the same folder as the input images, with the prefix "output_".
 
 ### Usage Instructions
 
