@@ -6,6 +6,10 @@ This project employs the YOLOv5 model to detect and localize HanNom characters w
 
 The project aims to digitize HanNom documents, facilitating indexing, annotation, and translation into modern Vietnamese. Leveraging deep learning with the YOLOv5 model, the project automates the HanNom character localization process, replacing the laborious manual approach.
 
+![Source image](image.png)
+
+![Example of an input image and its output characters](image-1.png)
+
 ### Data
 
 * **Image Data:** 70 jpg images for training and 10 jpg images for testing.
@@ -36,12 +40,12 @@ The data was provided by Dr. Ta Viet Cuong - UET.
 
     * For the validation dataset:
     ```
-    python main.py .\data\images\val\ .\data\labels\val\ 
+    python main.py ./data/images/val/ ./data/labels/val/ 
     ```
 
     * For the training dataset:
     ```
-    python main.py .\data\images\train\ .\data\labels\train\
+    python main.py ./data/images/train/ ./data/labels/train/
     ```
 
 ### Source Code
