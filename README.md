@@ -11,7 +11,7 @@ The project aims to digitize HanNom documents, facilitating indexing, annotation
 * **Image Data:** 70 jpg images for training and 10 jpg images for testing.
 * **Label Data:**  Corresponding .txt files for each image, containing information on the class, center coordinates (x_center, y_center), width, and height of each character.
 
-The data was provided by Dr. Ta Viet Cuong.
+The data was provided by Dr. Ta Viet Cuong - UET.
 
 ### Methodology
 
@@ -46,7 +46,7 @@ The data was provided by Dr. Ta Viet Cuong.
 
 ### Source Code
 
-The source code is available at: [https://github.com/namdnhn/HanNom-Charactor-Localization](https://github.com/namdnhn/HanNom-Charactor-Localization)
+The source code is available at: [https://github.com/tolamson2811/character-localization](https://github.com/tolamson2811/character-localization)
 
 ### References
 
